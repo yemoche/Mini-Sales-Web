@@ -1,6 +1,7 @@
 const express = require ('express');
 const mongoose = require ('mongoose');
 const authroutes = require ('./routes/authroutes')
+const cookieParser = require ('cookie-parser')
 require('dotenv').config({path: __dirname + '/.env'})
 const app = express()
 
@@ -15,6 +16,7 @@ mongoose.connect(process.env.MONGO_URL, {
 //middleware
 app.use(express.static('public'));
 app.use(express.json());
+app.use(cookieParser());
 
 //view engine
 app.set('view engine', 'ejs');
