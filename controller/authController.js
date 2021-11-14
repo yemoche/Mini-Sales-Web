@@ -3,7 +3,6 @@ const jwt = require ('jsonwebtoken');
 
 //handle errors object
 const handleErrors = (err) =>{
-  // console.log(err.message, err.code, err.reason)
   let errors = { email: "", password: "" };
 
 // incorrect email
